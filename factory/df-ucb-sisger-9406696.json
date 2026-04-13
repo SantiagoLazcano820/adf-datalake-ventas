@@ -1,0 +1,9 @@
+{
+	"name": "df-ucb-sisger-9406696",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fd44ed2b-fdd4-46b6-a17e-86c7cd62292b",
+		"tenantId": "cc28633f-12b8-46cb-bc15-951dae239b4d"
+	}
+}
