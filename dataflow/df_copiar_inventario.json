@@ -17,6 +17,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "ds_silver_inventario_filtrado",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -60,9 +64,14 @@
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['invetario_filtrado.csv'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> sink1"
+				"     saveOrder: 1,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
